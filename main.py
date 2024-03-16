@@ -42,27 +42,26 @@ def Bangla():
     score = 0; 
 
     #rnadomly selects a bangla word, from the dictionry values, then the next line finds the corresponding english word for the randomly chosen bangla word using the helper function get_key_by_values
-    correct_answer = random.choice(list(word_bank.values()))
-    english_word = get_key_by_value(word_bank, correct_answer)
-    print(f"\nBangla Word: {correct_answer}")
+    bangla_word = random.choice(list(word_bank.values()))
+    english_word = get_key_by_value(word_bank, bangla_word)
+    print(f"\nBangla Word: {bangla_word}")
 
     # Display English word choices
     print("Choose the correct English word:")
-    print(f"1. {english_word}")
     
     # Generate three random incorrect choices (ensure they are unique)
-    incorrect_choices = random.sample(set(word_bank.keys()) - {english_word}, 3)
-    random.shuffle(incorrect_choices)
+    incorrect_choices = random.sample(set(word_bank.keys()), 3)
     randomizer = incorrect_choices + [english_word]
+    random.shuffle(randomizer)
     
 
-    for i, choice in enumerate(incorrect_choices, start=2):
+    for i, choice in enumerate(randomizer, start=1):
         print(f"{i}. {choice}")
 
     user_answer = input("Select the correct number: ")
 
     if user_answer.isdigit() and 1 <= int(user_answer) <= 4:
-        selected_word = incorrect_choices[int(user_answer) - 2] if int(user_answer) >= 2 else english_word
+        selected_word = randomizer[int(user_answer) - 2] if int(user_answer) >= 2 else english_word
 
         if selected_word == english_word:
             print("Correct! 🎉")
@@ -78,7 +77,6 @@ def get_key_by_value(dictionary, value):
 
 # Your existing code for checking the language and calling Bangla() goes here.
 
-# Example usage
 Bangla()
 
 
