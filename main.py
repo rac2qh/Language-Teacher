@@ -85,3 +85,5 @@ Bangla()
 #pick a subject, that subject wil have words for you to practice your vocab
 #pick a word, and have to select the meaning of the word, multiple choice 
 #works for both bangla and english
+
+#practice commit and merge to main 
