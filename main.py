@@ -35,8 +35,7 @@ def Bangla():
     "mom": "amu",
     "dad": "abu"
     } 
-    # Add more word pairs as needed
-    
+
     #score tracker
     num_questions = 10; 
     score = 0; 
@@ -54,39 +53,21 @@ def Bangla():
     randomizer = incorrect_choices + [english_word]
     random.shuffle(randomizer)
     
-
+    # Generates list of answer choices
     for i, choice in enumerate(randomizer, start=1):
         print(f"{i}. {choice}")
-
-    #user_answer = input("Select the correct number: ")
     user_answer = input("Type the correct word: ")
     user_answer = user_answer.lower() 
-    #validates answer is number and less than or equal to 4. 
-    #if user_answer.isdigit() and 1 <= int(user_answer) <= 4:
-        #this will always return true, it's not checking user answer at all
-    if (list(word_bank.keys())[list(word_bank.values()).index(bangla_word)]) == user_answer:
-        #if (list(word_bank.keys())[list(word_bank.values()).index(bangla_word)]) == english_word:
-        #if the number you selected matches with the index of the english_word     
+    #checks if user_answer == bangla_words key value
+    if (list(word_bank.keys())[list(word_bank.values()).index(bangla_word)]) == user_answer:  
         print("Correct! 🎉")
     else:
         print(f"Wrong! The correct answer is: {english_word}")
-    #else:
-    #    print("Invalid input. Please enter a number between 1 and 4.")
-
+#populates dictionary
 def get_key_by_value(dictionary, value):
     for key, val in dictionary.items():
         if val == value:
             return key
 
-# Your existing code for checking the language and calling Bangla() goes here.
-
+#method call
 Bangla()
-
-
-#pick a subject, that subject wil have words for you to practice your vocab
-#pick a word, and have to select the meaning of the word, multiple choice 
-#works for both bangla and english
-
-#practice commit and merge to main 
-#https://stackoverflow.com/questions/42820840/how-to-push-changes-to-branch
-#add this link 
