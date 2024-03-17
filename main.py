@@ -5,12 +5,6 @@ import random
 
 language = input("What language would you like to learn? " )
 languagechoices = ["Bangla", "Spanish", "English", "Arabic"]
-yes_or_no = input(f"The language you selected is {language}, is that correct? ")  
-answer = ["yes", "no", "y", "n"]
-if yes_or_no in answer: 
-    print("ok")   
-else: 
-    print("Please select an answer")
 if language in languagechoices: 
     print("Welcome I hope you learn something new today!")
 else: 
