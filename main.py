@@ -58,17 +58,20 @@ def Bangla():
     for i, choice in enumerate(randomizer, start=1):
         print(f"{i}. {choice}")
 
-    user_answer = input("Select the correct number: ")
-
-    if user_answer.isdigit() and 1 <= int(user_answer) <= 4:
-        selected_word = randomizer[int(user_answer) - 2] if int(user_answer) >= 2 else english_word
-
-        if selected_word == english_word:
-            print("Correct! 🎉")
-        else:
-            print(f"Wrong! The correct answer is: {english_word}")
+    #user_answer = input("Select the correct number: ")
+    user_answer = input("Type the correct word: ")
+    user_answer = user_answer.lower() 
+    #validates answer is number and less than or equal to 4. 
+    #if user_answer.isdigit() and 1 <= int(user_answer) <= 4:
+        #this will always return true, it's not checking user answer at all
+    if (list(word_bank.keys())[list(word_bank.values()).index(bangla_word)]) == user_answer:
+        #if (list(word_bank.keys())[list(word_bank.values()).index(bangla_word)]) == english_word:
+        #if the number you selected matches with the index of the english_word     
+        print("Correct! 🎉")
     else:
-        print("Invalid input. Please enter a number between 1 and 4.")
+        print(f"Wrong! The correct answer is: {english_word}")
+    #else:
+    #    print("Invalid input. Please enter a number between 1 and 4.")
 
 def get_key_by_value(dictionary, value):
     for key, val in dictionary.items():
